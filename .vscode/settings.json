@@ -1,0 +1,28 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "latex-workshop.bibtex-format.sort.enabled": true,
+  "latex-workshop.latex.autoBuild.run": "never",
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "upLaTeX",
+      "tools": ["upLaTeX"]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "upLaTeX",
+      "command": "latexmk",
+      "args": [
+        "-f",
+        "-gg",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
+    }
+  ],
+  "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+  "latex-workshop.view.pdf.viewer": "tab"
+}
