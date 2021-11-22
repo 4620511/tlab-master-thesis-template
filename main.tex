@@ -1,0 +1,57 @@
+\documentclass[a4paper,12pt]{jreport}
+
+\usepackage{pkg/tlab_master}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage[nobreak]{cite}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{url}
+
+\begin{document}
+
+\title{タイトル}
+\etitle{Title}
+\supervisor{博士 (工学) 谷口 行信 教授}
+\subadvisorA{博士 (工学) 立川 智章 准教授}
+\subadvisorB{博士 (工学) 加納 徹 助教}
+\author{小松 俊太}
+\studentid{4620511}
+\date{}
+\year{}
+
+\maketitle
+
+\pagestyle{empty}\mbox{}\newpage
+
+\input{src/0.abstract}
+
+\pagenumbering{roman}
+\setcounter{page}{0}
+
+\pagestyle{plain}
+\tableofcontents
+\listoffigures
+\addcontentsline{toc}{chapter}{図目次}
+\listoftables
+\addcontentsline{toc}{chapter}{表目次}
+\newpage
+\pagenumbering{arabic}
+
+\input{src/1.introduction}
+\input{src/2.related_works}
+\input{src/3.proposed_method}
+\input{src/4.experiments}
+\input{src/5.results}
+\input{src/6.conclusion}
+\input{src/7.acknowledgement}
+
+\bibliographystyle{junsrt}
+\bibliography{references}
+\newpage
+\input{src/99.publications}
+
+\end{document}

@@ -1,0 +1,202 @@
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{indentfirst}
+\usepackage{latexsym}
+\usepackage{tabularx}
+
+\setlength{\textwidth}{424pt}
+\setlength{\textheight}{600pt}
+\setlength{\topmargin}{-0.1pt}
+\setlength{\parindent}{12pt}
+\setlength{\oddsidemargin}{12pt}
+\setlength{\evensidemargin}{12pt}
+\setlength{\footskip}{60pt}
+\setlength{\parskip}{1.5ex}
+
+\long\def\Supervisor{主査}
+\long\def\Subadvisor{副査}
+\long\def\LabAffiliationOne{\normalsize 東京理科大学大学院 工学研究科 情報工学専攻}
+\long\def\Address{東京都葛飾区新宿6-3-1}
+
+\long\def\supervisor#1{\gdef\@supervisor{#1}}
+\let\@supervisor\@empty
+
+\long\def\subadvisorA#1{\gdef\@subadvisorA{#1}}
+\let\@subadvisorA\@empty
+\long\def\subadvisorB#1{\gdef\@subadvisorB{#1}}
+\let\@subadvisorB\@empty
+\long\def\subadvisorC#1{\gdef\@subadvisorC{#1}}
+\let\@subadvisorC\@empty
+\long\def\subadvisorD#1{\gdef\@subadvisorD{#1}}
+\let\@subadvisorD\@empty
+
+\long\def\affiliation#1{\gdef\@affiliation{#1}}
+\let\@affiliation\@empty
+\long\def\studentid#1{\gdef\@studentid{#1}}
+\let\@studentid\@empty
+\long\def\year#1{\gdef\@year{#1}}
+\let\@year\@empty
+\long\def\etitle#1{\gdef\@etitle{#1}}
+
+\newcounter{subad}
+\setcounter{subad}{0}
+
+\def\maketitle{
+  \thispagestyle{empty}
+  \setcounter{page}{1}
+  \noindent
+  {
+    \Large
+    \begin{center}
+      {\LARGE 修　士　論　文}\\
+      \vspace*{0.5cm}
+      {\Large \@year 年度}\\
+      \vspace*{1.0cm}
+      \begin{tabular}{cp{21zw}}
+        題　　目     & {\Large \@title}       \\
+                     &                        \\[-1mm]
+        英文題目     & {\Large \@etitle}      \\
+        \vspace{1cm} &                        \\
+        \noindent
+        主査         & {\Large \@supervisor}  \\[2mm]
+
+        \ifx\@subadvisorA\empty\else
+          \noindent
+        副査         & {\Large \@subadvisorA} \\
+        \fi
+
+        \ifx\@subadvisorB\empty\else
+          \noindent
+        副査         & {\Large \@subadvisorB} \\
+        \fi
+
+        \ifx\@subadvisorC\empty\else
+          \noindent
+        副査         & {\Large \@subadvisorC} \\
+        \fi
+
+        \ifx\@subadvisorD\empty\else
+          \noindent
+        副査         & {\Large \@subadvisorD} \\
+        \fi
+
+                     &                        \\[5mm]
+        氏　　名     & {\Large \@author}      \\[5mm]
+        学籍番号     & {\Large \@studentid}   \\
+      \end{tabular}
+      \\
+      \vspace*{2cm}
+      {\large\hfill \LabAffiliationOne\\}
+    \end{center}
+  }
+}
+
+\makeatletter
+
+\renewenvironment{enumerate}
+{\ifnum \@enumdepth >\thr@@\@toodeep\else
+    \advance\@enumdepth\@ne
+    \edef\@enumctr{enum\romannumeral\the\@enumdepth}
+    \list{\csname label\@enumctr\endcsname}{
+    \iftdir
+      \ifnum \@listdepth=\@ne \topsep.5\normalbaselineskip
+      \else\topsep\z@\fi
+      \labelwidth1zw \labelsep.3zw
+      \ifnum \@enumdepth=\@ne \leftmargin1zw\relax
+      \else\leftmargin\leftskip\fi
+      \advance\leftmargin 1zw
+    \fi
+    \parskip\z@ \itemsep\z@ \parsep\z@
+    \usecounter{\@enumctr}
+    \def\makelabel##1{\hss\llap{##1}}}
+  \fi}{\endlist}
+
+\renewenvironment{itemize}
+{\ifnum \@itemdepth >\thr@@\@toodeep\else
+    \advance\@itemdepth\@ne
+    \edef\@itemitem{labelitem\romannumeral\the\@itemdepth}
+    \expandafter
+    \list{\csname \@itemitem\endcsname}{
+    \iftdir
+      \ifnum \@listdepth=\@ne \topsep.5\normalbaselineskip
+      \else\topsep\z@\fi
+      \labelwidth1zw \labelsep.3zw
+      \ifnum \@itemdepth =\@ne \leftmargin1zw\relax
+      \else\leftmargin\leftskip\fi
+      \advance\leftmargin 1zw
+    \fi
+    \parskip\z@ \itemsep\z@ \parsep\z@
+    \def\makelabel##1{\hss\llap{##1}}}
+  \fi}{\endlist}
+
+\makeatother
+
+\makeatletter
+
+\renewenvironment{description}
+{\list{}{\labelwidth\z@ \itemindent-\leftmargin
+    \iftdir
+      \leftmargin\leftskip \advance\leftmargin3\Cwd
+      \rightmargin\rightskip
+      \labelsep=1zw
+    \fi
+    \itemsep\z@
+    \listparindent\z@ \topskip\z@ \parskip\z@ \partopsep\z@
+    \let\makelabel\descriptionlabel}}{\endlist}
+
+\makeatother
+
+\makeatletter
+
+\renewenvironment{thebibliography}[1]
+{\chapter*{\bibname\@mkboth{\bibname}{\bibname}}
+  \addcontentsline{toc}{chapter}{\bibname}
+  \list{\@biblabel{\@arabic\c@enumiv}}
+  {\settowidth\labelwidth{\@biblabel{#1}}
+    \leftmargin\labelwidth
+    \advance\leftmargin\labelsep
+    \@openbib@code
+    \usecounter{enumiv}
+    \let\p@enumiv\@empty
+    \renewcommand\theenumiv{\@arabic\c@enumiv}}
+  \sloppy
+  \clubpenalty4000
+  \@clubpenalty\clubpenalty
+  \widowpenalty4000
+  \sfcode`\.\@m}
+{\def\@noitemerr
+  {\@latex@warning{Empty `thebibliography' environment}}
+  \endlist}
+
+\makeatother
+
+\renewcommand{\abstractname}{\Huge 要旨}
+\newcommand{\eabstractname}{\Huge Abstract}
+\renewcommand{\bibname}{参考文献}
+
+\def\epsfsize#1#2{\ifnum#1>\hsize\hsize\else#1\fi}
+
+\makeatletter
+
+\renewenvironment{abstract}{
+  \titlepage
+  \null\vfil
+  \@beginparpenalty\@lowpenalty
+  \chapter*{\abstractname}
+  \@endparpenalty\@M
+  \thispagestyle{empty}
+}
+
+\makeatother
+
+\makeatletter
+
+\newenvironment{eabstract}{
+  \titlepage
+  \null\vfil
+  \@beginparpenalty\@lowpenalty
+  \chapter*{\eabstractname}
+  \@endparpenalty\@M
+  \thispagestyle{empty}
+}
+
+\makeatother
