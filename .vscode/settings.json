@@ -15,10 +15,10 @@
       "command": "latexmk",
       "args": [
         "-f",
-        "-gg",
-        "-synctex=1",
-        "-interaction=nonstopmode",
         "-file-line-error",
+        "-gg",
+        "-interaction=nonstopmode",
+        "-synctex=1",
         "%DOC%"
       ]
     }
