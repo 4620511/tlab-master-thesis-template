@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
-cd "$DIR/.." || exit
+set -eu
 
+DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+
+cd "$DIR/.."
 rm -f ./*.aux ./*.bak ./*.bbl ./*.blg ./*.dvi ./*.fdb_latexmk ./*.fls ./*.lof ./*.log ./*.lot ./*.toc
