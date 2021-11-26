@@ -5,13 +5,13 @@
   "latex-workshop.latex.autoBuild.run": "never",
   "latex-workshop.latex.recipes": [
     {
-      "name": "pLaTex",
-      "tools": ["pLaTex"]
+      "name": "pLaTeX",
+      "tools": ["pLaTeX"]
     }
   ],
   "latex-workshop.latex.tools": [
     {
-      "name": "pLaTex",
+      "name": "pLaTeX",
       "command": "latexmk",
       "args": [
         "-f",
