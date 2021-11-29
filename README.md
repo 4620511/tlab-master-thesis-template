@@ -27,7 +27,7 @@ This is an unofficial template.
 3. Set the token as an environment variable `GITHUB_TOKEN`.
 4. Run `ghr [version] main.pdf`.
 
-## Use JIS standard characters
+### Use JIS standard characters
 
 For example, "鮏" is JIS 3rd level Kanji, so LaTeX cannot display it.
 
