@@ -26,3 +26,13 @@ This is an unofficial template.
    - If your repository is private, you have to allow the `repo` scope.
 3. Set the token as an environment variable `GITHUB_TOKEN`.
 4. Run `ghr [version] main.pdf`.
+
+## Use JIS standard characters
+
+For example, "鮏" is JIS 3rd level Kanji, so LaTeX cannot display it.
+
+```tex
+\usepackage{otf}
+
+\UTF{9B8F}川 矩義 助教
+```
