@@ -1,0 +1,8 @@
+version: "3"
+services:
+  pdfunite:
+    build: .
+    command: pdfunite abstract_ja.pdf abstract_en.pdf abstract.pdf
+    volumes:
+      - ../../:/workdir
+    working_dir: /workdir
