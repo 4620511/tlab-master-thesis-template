@@ -2,6 +2,6 @@
 
 DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 
-docker-compose -f "$DIR"/../.devcontainer/docker-compose.yml run latex latexmk
-docker-compose -f "$DIR"/../.devcontainer/docker-compose.yml down
+docker-compose -f "$DIR"/../docker/latex/docker-compose.yml run latex latexmk
+docker-compose -f "$DIR"/../docker/latex/docker-compose.yml down
 "$DIR"/clean

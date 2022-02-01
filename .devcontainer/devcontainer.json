@@ -1,14 +1,10 @@
 {
   // Docker Compose
-  "dockerComposeFile": "docker-compose.yml",
+  "dockerComposeFile": "../docker/latex/docker-compose.yml",
   "service": "latex",
   "workspaceFolder": "/workdir",
   "shutdownAction": "stopCompose",
   // Global
   "name": "latex",
-  "extensions": [
-    "esbenp.prettier-vscode",
-    "James-Yu.latex-workshop",
-    "oderwat.indent-rainbow"
-  ]
+  "extensions": ["James-Yu.latex-workshop", "taichi.vscode-textlint"]
 }

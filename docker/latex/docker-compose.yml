@@ -3,9 +3,7 @@ services:
   latex:
     build: .
     command: sleep infinity
-    volumes:
-      - ../:/workdir
-      - ./.latexmkrc:/root/.latexmkrc
-      - ~/.gitconfig:/root/.gitconfig
     environment:
       SHELL: "/bin/bash"
+    volumes:
+      - ../../:/workdir
