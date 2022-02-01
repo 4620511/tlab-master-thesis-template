@@ -17,6 +17,21 @@ This is an unofficial template.
 3. Open command palette and select `Remote-Containers: Open Folder in Container...`.
 4. Write your thesis eternally...
 
+## Build manually
+
+You can build LaTeX files manually with GNU Make.
+
+```bash
+# build abstract.pdf and thesis.pdf
+make
+
+# build abstract.pdf only
+make abstract.pdf
+
+# build thesis.pdf only
+make thesis.pdf
+```
+
 ## Tips
 
 ### Upload your PDF file to GitHub Releases via command line
