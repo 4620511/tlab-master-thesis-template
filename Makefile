@@ -1,17 +1,13 @@
 .PHONY: all
 all: abstract thesis
 
-.PHONY: abstract
-abstract: abstract-en abstract-ja concat-abstracts
+abstract.pdf: abstract_en.pdf abstract_ja.pdf concat-abstracts
 
-.PHONY: abstract-en
-abstract-en: __compile-abstract-en clean
+abstract_en.pdf: __compile-abstract-en clean
 
-.PHONY: abstract-ja
-abstract-ja: __compile-abstract-ja clean
+abstract_ja.pdf: __compile-abstract-ja clean
 
-.PHONY: thesis
-thesis: __compile-thesis clean
+thesis.pdf: __compile-thesis clean
 
 .PHONY: clean
 clean:
@@ -36,5 +32,5 @@ __compile-abstract-ja:
 
 .PHONY: __compile-thesis
 __compile-thesis:
-	@docker-compose -f ./docker/latex/docker-compose.yml run --rm latex latexmk main.tex
+	@docker-compose -f ./docker/latex/docker-compose.yml run --rm latex latexmk thesis.tex
 
