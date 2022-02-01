@@ -25,7 +25,7 @@ This is an unofficial template.
 2. Get your GitHub personal access token via <https://github.com/settings/tokens>.
    - If your repository is private, you have to allow the `repo` scope.
 3. Set the token as an environment variable `GITHUB_TOKEN`.
-4. Run `ghr [version] main.pdf`.
+4. Run `ghr [version] thesis.pdf`.
 
 ### Use JIS standard characters
 
