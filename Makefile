@@ -1,5 +1,5 @@
 .PHONY: all
-all: abstract thesis
+all: abstract.pdf thesis.pdf
 
 abstract.pdf: abstract_en.pdf abstract_ja.pdf concat-abstracts
 
