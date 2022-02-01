@@ -2,6 +2,20 @@
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "latex-workshop.bibtex-format.sort.enabled": true,
+  "latex-workshop.latex.autoClean.run": "onBuilt",
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bak",
+    "*.bbl",
+    "*.blg",
+    "*.dvi",
+    "*.fdb_latexmk",
+    "*.fls",
+    "*.lof",
+    "*.log",
+    "*.lot",
+    "*.toc",
+  ],
   "latex-workshop.latex.autoBuild.run": "never",
   "latex-workshop.latex.recipes": [
     {
