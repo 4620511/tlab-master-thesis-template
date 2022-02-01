@@ -1,0 +1,77 @@
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{tabularx}
+\usepackage{latexsym}
+\usepackage{indentfirst}
+
+\setlength{\textwidth}{424pt}
+\setlength{\textheight}{600pt}
+\setlength{\topmargin}{-0.1pt}
+\setlength{\parindent}{12pt}
+\setlength{\oddsidemargin}{12pt}
+\setlength{\evensidemargin}{12pt}
+\setlength{\footskip}{60pt}
+\setlength{\parskip}{1.5ex}
+
+\long\def\Supervisor{主査}
+\long\def\Subadvisor{副査}
+
+\long\def\supervisor#1{\gdef\@supervisor{#1}}
+\let\@supervisor\@empty
+\long\def\subadvisorA#1{\gdef\@subadvisorA{#1}}
+\let\@subadvisorA\@empty
+\long\def\subadvisorB#1{\gdef\@subadvisorB{#1}}
+\let\@subadvisorB\@empty
+\long\def\subadvisorC#1{\gdef\@subadvisorC{#1}}
+\let\@subadvisorC\@empty
+\long\def\subadvisorD#1{\gdef\@subadvisorD{#1}}
+\let\@subadvisorD\@empty
+\long\def\affiliation#1{\gdef\@affiliation{#1}}
+\let\@affiliation\@empty
+\long\def\studentid#1{\gdef\@studentid{#1}}
+\let\@studentid\@empty
+\long\def\year#1{\gdef\@year{#1}}
+\let\@year\@empty
+\long\def\etitle#1{\gdef\@etitle{#1}}
+
+\def\maketitle{
+  \thispagestyle{empty}
+  \setcounter{page}{1}
+  \noindent
+  {
+    \large
+    \begin{center}
+      {\Large 修士論文　要旨}\\
+      \vspace*{0.5cm}
+      \begin{table}[!h]
+        \begin{flushright}
+          \begin{tabular}{ll}
+            \noindent
+            主査 & \@supervisor\\
+            \ifx\@subadvisorA\empty\else
+            \noindent
+            副査 & \@subadvisorA\\
+            \fi
+            \ifx\@subadvisorB\empty\else
+            \noindent
+            副査 & \@subadvisorB\\
+            \fi
+            \ifx\@subadvisorC\empty\else
+            \noindent
+            副査 & \@subadvisorC\\
+            \fi
+            \ifx\@subadvisorD\empty\else
+            \noindent
+            副査 & \@subadvisorD\\
+            \fi
+          \end{tabular}
+        \end{flushright}
+      \end{table}
+      \begin{table}[!h]
+        \begin{tabular}{lp{0.8\textwidth}}
+          論文提出者 & \@studentid\ \ \@author\\
+          論文題目   & \@title\\
+        \end{tabular}
+      \end{table}
+    \end{center}
+  }
+}

@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-sed -i -e 's/、/，/g' **/*.tex
-sed -i -e 's/。/．/g' **/*.tex
