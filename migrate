@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -eu
+
+TEMPLATE_DIR="${TEMPLATE_DIR:-../tlab-master-thesis-template}"
+WORK_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+
+mv main.tex thesis.tex
+rm -r .devcontainer .vscode bin pkg
+
+cd "${TEMPLATE_DIR}"
+cp -r .devcontainer .latexmkrc .vscode abstract_en.tex abstract_ja.tex bin docker Makefile pkg "${WORK_DIR}"
